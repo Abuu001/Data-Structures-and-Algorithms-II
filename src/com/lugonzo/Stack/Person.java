@@ -12,4 +12,8 @@ public class Person {
     public String toString(){
         return "Name " + this.name + " Rollno " + this.rollno;
     }
+
+    public String getName(){
+        return name;
+    }
 }
