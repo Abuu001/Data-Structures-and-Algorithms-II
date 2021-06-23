@@ -2,6 +2,8 @@ package com.lugonzo.LinkedList.SinglyLinkedList;
 
 public class sLinkedList {
 
+    Node head;
+
     class Node {
         Node next;
         int data;
@@ -12,7 +14,6 @@ public class sLinkedList {
         }
     }
 
-    Node head;
 
     public void insertFirst(int new_data){
 
@@ -27,7 +28,7 @@ public class sLinkedList {
 
         Node n = head;
         while(n != null){
-            System.out.print(n.data + " => ");
+            System.out.print(n.data + " => " );
             n = n.next;
         }
     }
@@ -63,6 +64,76 @@ public class sLinkedList {
      return;
     }
 
+    public void deleteNode(int key){
+
+        Node temp = head, prev = null;
+
+        // If head node itself holds the key to be deleted
+        if (temp != null && temp.data == key) {
+            head = temp.next; // Changed head
+            return;
+        }
+
+        // Search for the key to be deleted, keep track of
+        // the previous node as we need to change temp.next
+        while (temp != null && temp.data != key) {
+            prev = temp;
+            temp = temp.next;
+        }
+
+        // If key was not present in linked list
+        if (temp == null)
+            return;
+
+        // Unlink the node from linked list
+        prev.next = temp.next;
+    }
+
+    public  int getSize(){
+
+        Node n = head;
+        int count =0;
+
+        while(n != null){
+            count++;
+            n = n.next;
+        }
+        return count;
+    }
+
+    public boolean isNodePresent(int value){
+
+        Node current = head;
+
+        if(current.data == value){
+            return true;
+        }
+
+        while(current != null ){
+
+            if(current.data == value){
+                return true;
+            }
+
+            current = current.next;
+        }
+
+        return false;
+    }
 
 
+    public int  getValueAtIndex(int index){
+        int count =0;
+        Node current = head;
+
+        while(current != null){
+            if(count == index){
+                return current.data;
+            }
+            count++;
+            current = current.next;
+        }
+
+        return 0;
+    }
 }
