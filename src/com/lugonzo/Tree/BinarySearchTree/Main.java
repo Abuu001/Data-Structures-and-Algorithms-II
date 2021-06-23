@@ -26,6 +26,11 @@ public class Main {
 
         Person1 p = bst.getData(bst.findParent("Jim"));
         System.out.println(p.toString());
+
+        System.out.println("==========================================");
+        sBinarySearchTree tree = new sBinarySearchTree(4);
+
+
     }
 
 }
