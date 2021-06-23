@@ -30,5 +30,19 @@ public class Main {
         list2.addNodeAtLast(33);  //25 => 24 => 23 => 22 => 33 =>
         list2.printAll();
 
+        System.out.println();
+        list2.deleteNode(22); //25 => 24 => 23 => 33 =>
+        list2.printAll();
+
+        System.out.println();
+        System.out.println(list2.getSize()); //4
+
+        System.out.println();
+        System.out.println(list2.isNodePresent(25)); //true
+        System.out.println(list2.isNodePresent(77)); //false
+
+        System.out.println();  //25 => 24 => 23 => 33 =>
+        System.out.println(list2.getValueAtIndex(1)); //24
+        System.out.println(list2.getValueAtIndex(3)); //33
     }
 }
