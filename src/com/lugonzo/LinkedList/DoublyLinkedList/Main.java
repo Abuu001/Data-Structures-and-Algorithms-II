@@ -16,5 +16,20 @@ public class Main {
 
         dList.deleteNode(4);
         dList.printList();
+
+        System.out.println("==========================================");
+        sDoublyLinkedList  dList2 = new sDoublyLinkedList();
+        dList2.addAtFirst(2);
+        dList2.addAtFirst(3);
+        dList2.addAtFirst(4);
+        dList2.addAtFirst(5);
+
+        dList2.printAll(); //5 => 4 => 3 => 2 =>
+       // dList2.deleteNode(5); // 4 => 3 => 2 =>
+
+        System.out.println();
+        dList2.deleteNode(5); // 4 => 3 => 2 =>
+        dList2.printAll();
+
     }
 }
